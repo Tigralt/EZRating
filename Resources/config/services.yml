@@ -1,0 +1,4 @@
+services:
+    ezrating.manager:
+        class: Tigralt\EZRatingBundle\Services\RatingManager
+        arguments: [ "@doctrine.orm.entity_manager" ]
