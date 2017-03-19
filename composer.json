@@ -1,0 +1,30 @@
+{
+    "name" : "tigralt/ezratingbundle",
+    "description" : "A simple and fast implemented bundle for user rating management",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Tigralt",
+        "email" : "tigralt.mail@gmail.com"
+    }],
+    "keywords" : [
+        "ezrating rating easy"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Tigralt\\EZRatingBundle" : ""
+        }
+    },
+    "target-dir" : "Tigralt/EZRatingBundle",
+    "repositories" : [{
+    }],
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "1.0-dev"
+        }
+    }
+}
