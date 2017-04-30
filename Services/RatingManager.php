@@ -15,10 +15,11 @@ class RatingManager
         $this->em = $entityManager;
     }
 
-    public function addRatingThread($name)
+    public function addRatingThread($name, $meta=array())
     {
         $thread = new RatingThread();
         $thread->setName($name);
+        $thread->setMeta($meta);
 
         $this->em->persist($thread);
         $this->em->flush();
