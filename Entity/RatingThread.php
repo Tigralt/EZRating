@@ -30,12 +30,20 @@ class RatingThread
     private $name;
 
     /**
+     * @var array
+     *
+     * @ORM\Column(name="meta", type="array")
+     */
+    private $meta;
+
+    /**
      * @ORM\OneToMany(targetEntity="Rating", mappedBy="thread")
      */
     private $ratings;
 
     public function __construct()
     {
+        $this->meta = array();
         $this->ratings = new ArrayCollection();
     }
 
@@ -109,5 +117,29 @@ class RatingThread
     public function getRatings()
     {
         return $this->ratings;
+    }
+
+    /**
+     * Set meta
+     *
+     * @param string $comment
+     *
+     * @return Rating
+     */
+    public function setMeta($meta)
+    {
+        $this->meta = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Get meta
+     *
+     * @return array
+     */
+    public function getMeta()
+    {
+        return $this->meta;
     }
 }
