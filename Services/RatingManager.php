@@ -24,9 +24,12 @@ class RatingManager
         $this->em->flush();
     }
 
-    public function removeRatingThread($name)
+    public function removeRatingThread($param)
     {
-        $thread = $this->em->getRepository("EZRatingBundle:RatingThread")->findOneByName($name);
+        if(is_numeric($param))
+            $thread = $this->em->getRepository("EZRatingBundle:RatingThread")->find($param);
+        else
+            $thread = $this->em->getRepository("EZRatingBundle:RatingThread")->findOneByName($param);
 
         if(!$thread)
             return;
