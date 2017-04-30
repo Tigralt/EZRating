@@ -24,6 +24,17 @@ class RatingManager
         $this->em->flush();
     }
 
+    public function removeRatingThread($name)
+    {
+        $thread = $this->em->getRepository("EZRatingBundle:RatingThread")->findOneByName($name);
+
+        if(!$thread)
+            return;
+
+        $this->em->remove($thread);
+        $this->em->flush();
+    }
+
     public function addRating($thread_id, $user_id, $rating_number, $comment, $meta = array())
     {
         $thread = $this->em->getRepository("EZRatingBundle:RatingThread")->find($thread_id);
