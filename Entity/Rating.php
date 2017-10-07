@@ -165,7 +165,7 @@ class Rating
     /**
      * Set meta
      *
-     * @param string $comment
+     * @param array $meta
      *
      * @return Rating
      */
