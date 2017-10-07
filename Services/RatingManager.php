@@ -61,6 +61,14 @@ class RatingManager
         return $rating;
     }
 
+    public function removeRating($rating) {
+        if (is_numeric($rating))
+            $rating = $this->em->getRepository("EZRatingBundle:Rating")->find($rating);
+
+        $this->em->remove($thread);
+        $this->em->flush();
+    }
+
     public function getAllRatingThreads()
     {
         return $this->em->getRepository("EZRatingBundle:RatingThread")->findAll();
