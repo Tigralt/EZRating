@@ -23,6 +23,8 @@ class RatingManager
 
         $this->em->persist($thread);
         $this->em->flush();
+
+        return $thread;
     }
 
     public function removeRatingThread($param)
@@ -55,6 +57,8 @@ class RatingManager
 
         $this->em->persist($rating);
         $this->em->flush();
+
+        return $rating;
     }
 
     public function getAllRatingThreads()
