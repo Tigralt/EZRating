@@ -65,7 +65,7 @@ class RatingManager
         if (is_numeric($rating))
             $rating = $this->em->getRepository("EZRatingBundle:Rating")->find($rating);
 
-        $this->em->remove($thread);
+        $this->em->remove($rating);
         $this->em->flush();
     }
 
